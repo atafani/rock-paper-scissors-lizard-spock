@@ -1,12 +1,13 @@
-import { Layout, ModalRPS } from "@/main/components";
+import "./home.css";
+import { Layout, ModalRPS } from "../../main/components";
 import { Button, Input, InputNumber, Spin, Typography, message } from "antd";
 import { useCallback, useEffect, useState } from "react";
-import { eMove } from "@/main/enums";
+import { eMove } from "../../main/enums";
 import { Address, useAccount, useBalance } from "wagmi";
-import { useGame } from "@/main/hooks";
-import { SignContainer } from "@/main/views";
+import useGame from "../../main/hooks/useGame";
+import { SignContainer } from "../../main/views";
 import { getContract } from "viem";
-import rps from "@/main/contracts/Rps.json";
+import rps from "../../main/contracts/Rps.json";
 import { getPublicClient } from "@wagmi/core";
 import { useRouter } from "next/router";
 

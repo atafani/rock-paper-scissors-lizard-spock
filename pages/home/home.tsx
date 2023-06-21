@@ -1,4 +1,3 @@
-import "./home.css";
 import { Layout, ModalRPS } from "../../main/components";
 import { Button, Input, InputNumber, Spin, Typography, message } from "antd";
 import { useCallback, useEffect, useState } from "react";

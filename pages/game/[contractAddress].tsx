@@ -20,10 +20,10 @@ const Game: React.FC = () => {
   const { Link } = Typography;
 
   const handleGetOpponentAddress = useCallback(async () => {
+    console.log(router);
     try {
       if (address) {
-        const arr = router.asPath.split("/");
-        const contract_address = arr[arr.length - 1] as Address;
+        const contract_address = router.query.contractAddress as Address;
         if (contract_address) {
           setContractAddress(contract_address);
           const contractInstance = getContract({

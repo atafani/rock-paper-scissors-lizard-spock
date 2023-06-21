@@ -124,10 +124,12 @@ const PlayerGame: React.FC<PlayerGameProps> = (props: PlayerGameProps) => {
   };
 
   useEffect(() => {
-    data?.[3].status === "success" && setMoveSelected(data?.[3].result);
-    if (Number(formatEther(data?.[2].result as any)) === 0) {
-      router.push("/");
-      localStorage.clear();
+    if (isFetched) {
+      data?.[3].status === "success" && setMoveSelected(data?.[3].result);
+      if (Number(formatEther(data?.[2].result as any)) === 0) {
+        router.push("/");
+        localStorage.clear();
+      }
     }
   }, [data]);
 
